@@ -5,10 +5,10 @@ yarn create vite simple-form-app --template react
 
 Vous devrez créer plusieurs composants (dont vous pouvez choisir le nom) :
 
-- Form pour le formulaire
-- StepTwo pour les résultats, une fois le formulaire validé
-- Footer
-- 
+- Form pour le formulaire
+- StepTwovpour les résultats, une fois le formulaire validé
+- Footer
+  
 Le projet crée devra être responsive.
 
 Bonus
