@@ -9,7 +9,7 @@ Vous devrez créer plusieurs composants (dont vous pouvez choisir le nom) :
 - StepTwo pour les résultats, une fois le formulaire validé
 - Footer
   
-Le projet crée devra être responsive.
+Le projet crée devra être responsive.
 
 Bonus
 ajouter une bordure rouge sur les champs de mots de passe s'ils ne sont pas indentiques
