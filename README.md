@@ -1,8 +1,16 @@
-# React + Vite
+Dans cet exercice, vous allez apprendre à réaliser un formulaire d'inscription simple.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Créer un projet React à l'aide de la commande :
+yarn create vite simple-form-app --template react
 
-Currently, two official plugins are available:
+Vous devrez créer plusieurs composants (dont vous pouvez choisir le nom) :
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Form pour le formulaire
+- StepTwo pour les résultats, une fois le formulaire validé
+- Footer
+- 
+Le projet crée devra être responsive.
+
+Bonus
+ajouter une bordure rouge sur les champs de mots de passe s'ils ne sont pas indentiques
+ajouter une icône "oeil" dans les champs de mots de passe, pour pouvoir les afficher ou non
