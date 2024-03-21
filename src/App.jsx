@@ -1,28 +1,57 @@
 import { useState } from "react";
 import "./App.css";
 
+import Form from "./components/Form";
+import StepTwo from "./components/StepTwo";
 import Footer from "./components/Footer";
 
 function App() {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState("chloe@mail.com");
+  const [name, setName] = useState("Chloe");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [show, setShow] = useState(true);
-  const [border, setBorder] = useState(false);
+  const [step, setStep] = useState(1);
+  const [errorPassword, setErrorPassword] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // console.log("hey");
     if (password !== confirmPassword) {
-      alert("Vos deux mots de passe ne sont pas identiques");
-      setBorder(false);
+      // alert("Vos deux mots de passe ne sont pas identiques");
+      setErrorPassword(true);
+    } else {
+      setErrorPassword(false);
+      setStep(2);
     }
   };
 
   return (
     <>
       <main className="container">
-        {show !== false ? (
+        {step === 1 ? (
+          <Form
+            handleSubmit={handleSubmit}
+            setName={setName}
+            setEmail={setEmail}
+            setPassword={setPassword}
+            setConfirmPassword={setConfirmPassword}
+            setErrorPassword={setErrorPassword}
+            name={name}
+            email={email}
+            password={password}
+            confirmPassword={confirmPassword}
+            errorPassword={errorPassword}
+          />
+        ) : (
+          <StepTwo
+            name={name}
+            email={email}
+            password={password}
+            setStep={setStep}
+          />
+        )}
+
+        {/* {show !== false ? (
           <form onSubmit={handleSubmit}>
             <h1>Create account</h1>
             <p>Name</p>
@@ -38,7 +67,6 @@ function App() {
             />
             <p>Email</p>
             <input
-              className={border === true && "red"}
               value={email}
               type="email"
               name="email"
@@ -50,6 +78,7 @@ function App() {
             />
             <p>Password</p>
             <input
+              className={errorPassword ? "red" : ""}
               value={password}
               type="password"
               name="password"
@@ -61,6 +90,7 @@ function App() {
             />
             <p>Confirm your password</p>
             <input
+              className={errorPassword ? "red" : ""}
               value={confirmPassword}
               type="password"
               name="confirm-password"
@@ -70,13 +100,12 @@ function App() {
                 setConfirmPassword(event.target.value);
               }}
             />
-            <button
-              onClick={() => {
-                setShow(false);
-              }}
-            >
-              Register
-            </button>
+            <button>Register</button>
+            {errorPassword === true && (
+              <h3 style={{ color: "red" }}>
+                Vos mots de passe ne sont pas identiques
+              </h3>
+            )}
           </form>
         ) : (
           <div className="StepTwo">
@@ -94,7 +123,7 @@ function App() {
               Edit your information
             </button>
           </div>
-        )}
+        )} */}
       </main>
       <Footer />
     </>
