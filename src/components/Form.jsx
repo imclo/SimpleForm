@@ -17,7 +17,7 @@ const Form = ({
     <>
       <form onSubmit={handleSubmit}>
         <h1>Create account</h1>
-        <p>Name</p>
+        <label htmlFor="name">Name</label>
         <input
           value={name}
           type="text"
@@ -28,7 +28,7 @@ const Form = ({
             setName(event.target.value);
           }}
         />
-        <p>Email</p>
+        <label htmlFor="email">Email</label>
         <input
           value={email}
           type="email"
@@ -39,7 +39,7 @@ const Form = ({
             setEmail(event.target.value);
           }}
         />
-        <p>Password</p>
+        <label htmlFor="password">Password</label>
         <input
           className={errorPassword ? "red" : ""}
           value={password}
@@ -52,7 +52,7 @@ const Form = ({
             setPassword(event.target.value);
           }}
         />
-        <p>Confirm your password</p>
+        <label htmlFor="confirm-password">Confirm your password</label>
         <input
           className={errorPassword ? "red" : ""}
           value={confirmPassword}
